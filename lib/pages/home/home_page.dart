@@ -26,7 +26,10 @@ class _HomePageState extends State<HomePage> {
               child: Image.asset("assets/images/user.png"),
             ),
             const SizedBox(height: 40),
-            cardView(),
+            Text(
+              "Nearby Locations",
+              style: TextStyle(fontSize: 20.sp),
+            ),
             const SizedBox(height: 10),
             nearbyStationsView(),
           ],

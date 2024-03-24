@@ -2,7 +2,7 @@ import 'package:evo_finder/common/values/colors.dart';
 import 'package:evo_finder/pages/home/home_page.dart';
 import 'package:evo_finder/pages/map/map_home.dart';
 import 'package:evo_finder/pages/profile/profile.dart';
-import 'package:evo_finder/pages/user_reviews/user_reviews.dart';
+import 'package:evo_finder/pages/review/review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,7 +10,7 @@ Widget buildPage(int index) {
   List<Widget> _widget = [
     const HomePage(),
     const MapHomePage(),
-    const UserReviewPage(),
+    const ReviewPage(),
     const ProfilePage(),
   ];
 
