@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:evo_finder/common/widgets/flutter_toast.dart';
 import 'package:evo_finder/pages/register/bloc/register_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,8 +31,23 @@ class RegisterController {
     }
 
     try {
-      final credential = await FirebaseAuth.instance
+      UserCredential credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
+
+      if (FirebaseAuth.instance.currentUser == null) {
+        toastInfo(msg: "User is not signed in");
+        return;
+      }
+
+      FirebaseFirestore.instance
+          .collection("Users")
+          .doc(credential.user!.email!)
+          .set({
+        "username": "",
+        "vehicle-name": "",
+        "vehicle-number": "",
+        "mobile-number": ""
+      });
 
       if (credential.user != null) {
         await credential.user?.sendEmailVerification();

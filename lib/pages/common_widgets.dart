@@ -1,4 +1,4 @@
-import 'package:evo_finder/common/values/constants.dart';
+import 'package:evo_finder/common/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,21 +18,6 @@ AppBar buildAppBar(String type) {
         color: Colors.black,
         fontSize: 18.sp,
         fontWeight: FontWeight.normal,
-      ),
-    ),
-  );
-}
-
-Widget buildThirdPartyLogin(BuildContext context) {
-  return Center(
-    child: Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _reusableIcons("google"),
-          _reusableIcons("apple"),
-          _reusableIcons("facebook"),
-        ],
       ),
     ),
   );

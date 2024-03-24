@@ -1,4 +1,4 @@
-import 'package:evo_finder/common/values/constants.dart';
+import 'package:evo_finder/common/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -110,25 +110,6 @@ Widget buildTextField(String hintText, String textType, String iconName,
       ));
 }
 
-Widget forgotPassword() {
-  return Container(
-    margin: EdgeInsets.only(left: 25.w),
-    width: 260.w,
-    height: 44.h,
-    child: GestureDetector(
-      onTap: () {},
-      child: Text(
-        "Forgot password",
-        style: TextStyle(
-            color: AppColors.primaryText,
-            decoration: TextDecoration.underline,
-            decorationColor: AppColors.primaryText,
-            fontSize: 12.sp),
-      ),
-    ),
-  );
-}
-
 Widget buildLogInAdnRegButton(
     String buttonName, String buttonType, void Function()? func) {
   return GestureDetector(
@@ -164,7 +145,7 @@ Widget buildLogInAdnRegButton(
               fontWeight: FontWeight.normal,
               color: buttonType == "login"
                   ? AppColors.primaryBackground
-                  : AppColors.primaryText),
+                  : Colors.green[500]),
         ),
       ),
     ),

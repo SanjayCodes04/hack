@@ -38,7 +38,10 @@ class SigninController {
           }
           var user = credentials.user;
           if (user != null) {
-            toastInfo(msg: "User Exists");
+            print("User Exists");
+
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil("/application", (route) => false);
             return;
           } else {}
         } on FirebaseAuthException catch (e) {

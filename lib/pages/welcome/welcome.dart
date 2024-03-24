@@ -1,4 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:evo_finder/common/values/constants.dart';
+import 'package:evo_finder/global.dart';
 import 'package:evo_finder/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:evo_finder/pages/welcome/bloc/welcome_event.dart';
 import 'package:evo_finder/pages/welcome/bloc/welcome_state.dart';
@@ -40,16 +42,14 @@ class _WelcomeState extends State<Welcome> {
                         1,
                         context,
                         "assets/icons/arrow_right.png",
-                        "First See Learning",
-                        "lorem",
+                        "Welcome to our App",
                         "assets/images/welcome_car_1.png",
                       ),
                       _page(
                         2,
                         context,
                         "assets/icons/tick.png",
-                        "First See Learning",
-                        "lorem",
+                        "Locations made easy",
                         "assets/images/welcome_car_3.png",
                       ),
                     ],
@@ -81,7 +81,7 @@ class _WelcomeState extends State<Welcome> {
   }
 
   Widget _page(int index, BuildContext context, String buttonPath, String title,
-      String subTitle, String imagePath) {
+      String imagePath) {
     return Column(
       children: [
         SizedBox(
@@ -101,17 +101,6 @@ class _WelcomeState extends State<Welcome> {
                 fontWeight: FontWeight.normal),
           ),
         ),
-        Container(
-          width: 375.w,
-          padding: EdgeInsets.only(left: 30.w, right: 30.w),
-          child: Text(
-            subTitle,
-            style: TextStyle(
-                color: Colors.black.withOpacity(0.5),
-                fontSize: 14.sp,
-                fontWeight: FontWeight.normal),
-          ),
-        ),
         GestureDetector(
           onTap: () {
             if (index < 2) {
@@ -123,8 +112,12 @@ class _WelcomeState extends State<Welcome> {
             } else {
               // Navigator.of(context)
               //     .push(MaterialPageRoute(builder: (context) => MyHomePage()));
+              // Global.storageService
+              //     .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
+              // print(
+              //     "the value is ${Global.storageService.getDeviceFirstOpen()}");
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("signIn", (route) => false);
+                  .pushNamedAndRemoveUntil("/signIn", (route) => false);
             }
           },
           child: Container(
